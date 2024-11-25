@@ -1,0 +1,37 @@
+.product-details {
+    padding: 20px;
+    text-align: center;
+    background-color: #fefefe; /* Fondo blanco */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .price {
+    font-size: 24px;
+    color: #e20074;
+    margin: 10px 0;
+  }
+  
+  .details {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .reviews ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .reviews ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  

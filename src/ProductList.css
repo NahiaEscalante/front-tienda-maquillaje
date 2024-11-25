@@ -1,0 +1,89 @@
+/* Contenedor de la lista de productos */
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
+  background-color: #fff; /* Fondo blanco */
+}
+
+/* Tarjeta del producto */
+.product-card {
+  width: calc(25% - 20px); /* Cuatro productos por fila */
+  background: transparent; /* Fondo transparente */
+  border-radius: 0; /* Sin bordes redondeados */
+  text-align: center;
+  padding: 10px 5px; /* Espaciado interno */
+  position: relative;
+  box-shadow: none; /* Sin sombra */
+  transition: none; /* Sin efectos de transición */
+}
+
+/* Descuento */
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #b19cd9; /* Color del descuento */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Imagen del producto */
+.product-image {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-image {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: auto;
+  max-height: 400px; /* Altura máxima para mantener proporción */
+  object-fit: contain; /* Asegura que la imagen no se distorsione */
+}
+
+
+/* Marca del producto */
+.brand {
+  font-size: 12px;
+  color: #999; /* Color gris claro */
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+/* Nombre del producto */
+.name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333; /* Color oscuro */
+  line-height: 1.5;
+}
+
+/* Precios */
+.prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999; /* Gris claro */
+  font-size: 12px;
+}
+
+.new-price {
+  color: #e20074; /* Rosa vibrante */
+  font-size: 16px;
+  font-weight: bold;
+}
+
