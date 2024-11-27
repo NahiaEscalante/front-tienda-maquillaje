@@ -1,37 +1,106 @@
-.product-details {
+/* Contenedor Principal */
+.product-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     padding: 20px;
+    font-family: "Arial", sans-serif;
+    background-color: #fff8f5;
+  }
+  
+  /* Imagen Principal */
+  .product-image-container {
+    width: 50%;
     text-align: center;
-    background-color: #fefefe; /* Fondo blanco */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
   }
   
   .product-image {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
   }
   
-  .price {
+  .product-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Miniaturas */
+  .thumbnails-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .thumbnail.active {
+    border-color: #e20074;
+  }
+  
+  /* Ajuste de la Sección Inferior */
+  .product-details {
+    text-align: center;
+    width: 60%;
+    margin-top: 20px;
+  }
+  
+  .product-title {
     font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .product-price {
+    font-size: 20px;
+    font-weight: bold;
     color: #e20074;
     margin: 10px 0;
   }
   
-  .details {
+  .product-description {
+    margin-top: 15px;
     font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .reviews ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .reviews ul li {
-    margin-bottom: 10px;
-    font-size: 14px;
+    line-height: 1.5;
     color: #555;
+  }
+  
+  /* Botones */
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .button {
+    background-color: #e20074;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #b0005b;
   }
   
