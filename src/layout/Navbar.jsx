@@ -1,21 +1,29 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Importa Link para la navegación
+import { Link } from "react-router-dom";
 import "../Navbar.css";
-// Importación de logos
-import glow from "../assets/logos/gloww.png"; // Importa tu logo Glow
-import lunavie from "../assets/logos/lunavie.png"; 
-import lumiere from "../assets/logos/lumiere.png"; 
+import CarritoModal from "../components/CarritoModal";
 
+// Logos
+import glow from "../assets/logos/gloww.png";
+import lunavie from "../assets/logos/lunavie.png";
+import lumiere from "../assets/logos/lumiere.png";
 
 function Navbar() {
-  const [navbarColor, setNavbarColor] = useState("#D4AF37"); // Color inicial
-  const [bottomBarPosition, setBottomBarPosition] = useState(0); // Posición de la barra inferior
-  const [logoUrl, setLogoUrl] = useState(lumiere); // Logo inicial
+  const [navbarColor, setNavbarColor] = useState("#D4AF37"); 
+  const [bottomBarPosition, setBottomBarPosition] = useState(0); 
+  const [logoUrl, setLogoUrl] = useState(lumiere); 
+  const [logoRoute, setLogoRoute] = useState("/lumiere"); 
+  const [isCartOpen, setIsCartOpen] = useState(false); // Estado para manejar el modal del carrito
 
-  const handleNavbarColorChange = (color, position, logo) => {
+  const handleNavbarColorChange = (color, position, logo, route) => {
     setNavbarColor(color);
     setBottomBarPosition(position);
-    setLogoUrl(logo); // Actualiza el logo dinámicamente
+    setLogoUrl(logo); 
+    setLogoRoute(route); 
+  };
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen); // Alterna entre abrir y cerrar el modal
   };
 
   return (
@@ -24,7 +32,7 @@ function Navbar() {
       <div className="top-bar">
         <button
           onClick={() =>
-            handleNavbarColorChange("#D4AF37", 0, lumiere) // Cambia a Lumiere
+            handleNavbarColorChange("#D4AF37", 0, lumiere, "/lumiere") 
           }
           className="top-bar-btn"
         >
@@ -32,7 +40,7 @@ function Navbar() {
         </button>
         <button
           onClick={() =>
-            handleNavbarColorChange("#87CEEB", 1, lunavie) // Cambia a LunaVie
+            handleNavbarColorChange("#87CEEB", 1, lunavie, "/lunavie") 
           }
           className="top-bar-btn"
         >
@@ -40,7 +48,7 @@ function Navbar() {
         </button>
         <button
           onClick={() =>
-            handleNavbarColorChange("#FFC1CC", 2, glow) // Cambia a Glow
+            handleNavbarColorChange("#FFC1CC", 2, glow, "/glow") 
           }
           className="top-bar-btn"
         >
@@ -62,22 +70,31 @@ function Navbar() {
       {/* Navbar Principal */}
       <nav
         className="navbar"
-        style={{ backgroundColor: navbarColor }} // Cambia el color de fondo
+        style={{ backgroundColor: navbarColor }} 
       >
         <div className="logo">
-          <img src={logoUrl} alt="Logo" /> {/* Logo dinámico */}
+          {/* Enlace dinámico basado en la tienda */}
+          <Link to={logoRoute}>
+            <img src={logoUrl} alt="Logo" className="logo-img" />
+          </Link>
         </div>
+
         <div className="search-bar">
           <input type="text" placeholder="Buscar producto" />
           <button className="search-icon">&#128269;</button>
         </div>
+
         <div className="menu-links">
-          <Link to="/auth/login">Inicia sesión</Link> {/* Navega a /auth/login */}
-          <span>Mis compras</span>
-          <span>&#9825;</span>
-          <span>&#128722;</span>
+          <Link to="/auth/login">Inicia sesión</Link> 
+          <Link to="/profile">
+            <span>Mi perfil</span> {/* Ícono de usuario */}
+          </Link>
+          <span className="cart-icon" onClick={toggleCart}>&#128722;</span> {/* Ícono del carrito */}
         </div>
       </nav>
+
+      {/* Carrito Modal */}
+      {isCartOpen && <CarritoModal isOpen={isCartOpen} onClose={toggleCart} />}
     </div>
   );
 }

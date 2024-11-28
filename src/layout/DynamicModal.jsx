@@ -1,15 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Importa el hook de navegación
+import { useNavigate } from "react-router-dom"; 
 import "../DynamicModal.css";
 
 function DynamicModal() {
   const navigate = useNavigate();
 
   const menuItems = [
-    { name: "Rostro", route: "/rostro" },
-    { name: "Ojos", route: "/ojos" },
-    { name: "Labios", route: "/labios" },
-    { name: "Cejas y pestañas", route: "/cejas-y-pestanas" },
+    { name: "Rostro", route: "/categoria/rostro" },
+    { name: "Ojos", route: "/categoria/ojos" },
+    { name: "Labios", route: "/categoria/labios" },
+    { name: "Cejas y pestañas", route: "/categoria/cejas-y-pestanas" },
   ];
 
   const handleNavigation = (route) => {
@@ -17,14 +17,14 @@ function DynamicModal() {
   };
 
   return (
-    <div>
+    <div className="dynamic-modal">
       {/* Barra de Navegación */}
       <nav className="dynamic-menu">
         {menuItems.map((item, index) => (
           <button
             key={index}
             className="menu-item"
-            onClick={() => handleNavigation(item.route)} 
+            onClick={() => handleNavigation(item.route)}
           >
             {item.name}
           </button>

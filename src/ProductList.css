@@ -1,89 +1,97 @@
-/* Contenedor de la lista de productos */
-.product-list {
+.unique-category-page {
+  padding: 20px;
+}
+
+.unique-products-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
-  padding: 10px 0;
-  background-color: #fff; /* Fondo blanco */
 }
 
-/* Tarjeta del producto */
-.product-card {
-  width: calc(25% - 20px); /* Cuatro productos por fila */
-  background: transparent; /* Fondo transparente */
-  border-radius: 0; /* Sin bordes redondeados */
+.unique-category-header {
   text-align: center;
-  padding: 10px 5px; /* Espaciado interno */
-  position: relative;
-  box-shadow: none; /* Sin sombra */
-  transition: none; /* Sin efectos de transición */
+  margin-bottom: 20px;
 }
 
-/* Descuento */
-.discount {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #b19cd9; /* Color del descuento */
+.unique-category-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.unique-category-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.unique-product-card {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.unique-product-card:hover {
+  transform: scale(1.05);
+}
+
+.unique-product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.unique-discount-badge {
+  background-color: #ff5050;
   color: white;
   font-size: 12px;
   font-weight: bold;
   padding: 5px 10px;
-  border-radius: 4px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
-/* Imagen del producto */
-.product-image {
-  width: 100%;
-  height: auto;
-  max-height: 250px;
-  object-fit: contain;
-  margin-bottom: 10px;
+.unique-prices {
+  margin-top: 15px;
 }
 
-.product-image {
-  width: 100%; /* Ocupa todo el ancho del contenedor */
-  height: auto;
-  max-height: 400px; /* Altura máxima para mantener proporción */
-  object-fit: contain; /* Asegura que la imagen no se distorsione */
-}
-
-
-/* Marca del producto */
-.brand {
-  font-size: 12px;
-  color: #999; /* Color gris claro */
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-
-/* Nombre del producto */
-.name {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333; /* Color oscuro */
-  line-height: 1.5;
-}
-
-/* Precios */
-.prices {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.old-price {
+.unique-old-price {
   text-decoration: line-through;
-  color: #999; /* Gris claro */
-  font-size: 12px;
+  color: #888;
+  font-size: 14px;
 }
 
-.new-price {
-  color: #e20074; /* Rosa vibrante */
-  font-size: 16px;
+.unique-new-price {
   font-weight: bold;
+  color: #333;
+  font-size: 18px;
 }
 
+.unique-view-details-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.unique-view-details-btn:hover {
+  background-color: #0056b3;
+}
+
+.unique-no-products {
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+}
